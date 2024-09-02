@@ -62,3 +62,9 @@ pnpm test:e2e --debug
 ```sh
 pnpm lint
 ```
+
+```sh
+#H5&PC
+适配了宽375的样式稿CSS单位直接使用样式稿的px
+如果开发pc端需要将设计稿上的单位值除19.2单位为rem
+```

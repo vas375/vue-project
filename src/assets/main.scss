@@ -22,14 +22,4 @@ body {
   html {
     font-size: 19.2px; /* 固定 PC 端的 rem 基准值 */
   }
-  body {
-    max-width: 375px;
-  }
-}
-
-/* 全屏模式（通过外层div设置 full 属性） */
-.full {
-  max-width: none;
-  width: 100%;
-  margin: 0;
 }
