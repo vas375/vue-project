@@ -1,35 +1,35 @@
 @import './base.css';
-
-#app {
-  max-width: 1280px;
+html {
+  font-size: calc(100vw / 375 * 16); /* 基于设计稿宽度设置 rem 基准值 */
+}
+/* 基础样式，默认宽度为 100% */
+body {
   margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
+/* 平板（pad）尺寸适配 */
+@media screen and (max-width: 1024px) {
   body {
-    display: flex;
-    place-items: center;
+    max-width: 100%;
   }
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+/* 超过平板尺寸后，限制宽度为430px并居中 */
+@media screen and (min-width: 1025px) {
+  html {
+    font-size: 19.2px; /* 固定 PC 端的 rem 基准值 */
   }
+  body {
+    max-width: 375px;
+  }
+}
+
+/* 全屏模式（通过外层div设置 full 属性） */
+.full {
+  max-width: none;
+  width: 100%;
+  margin: 0;
 }

@@ -10,5 +10,8 @@
     {
       "path": "./tsconfig.vitest.json"
     }
-  ]
+  ],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
 }
