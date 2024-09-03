@@ -15,18 +15,15 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "@/assets/custom_theme.scss";
+          @import "@nutui/nutui/dist/styles/variables.scss";
+        `
+      }
+    }
   }
-  // css: {
-  //   preprocessorOptions: {
-  //     scss: {
-  //       additionalData: `
-  //       @media screen and (max-width: 450px) {
-  //         body {
-  //           font-size: calc(100vw / 375 * 16);
-  //         }
-  //       }
-  //     `
-  //     }
-  //   }
-  // }
 })
