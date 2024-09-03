@@ -1,7 +1,6 @@
 <template>
   <div class="home-wrap">
     <Header></Header>
-    <nut-button type="primary">登录</nut-button>
   </div>
 </template>
 <script lang="ts" setup>

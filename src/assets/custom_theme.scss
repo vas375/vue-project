@@ -17,6 +17,9 @@
   --nut-black: #000;
   --nut-required-color: #704eed;
 
+  //自定义颜色
+  --nut-input-bg: #f8f8f8;
+
   // 暗黑模式下颜色
   --nut-dark-background: #131313;
   --nut-dark-background2: #1b1b1b;
@@ -47,7 +50,16 @@
 }
 
 .nut-button--primary {
-  //background: linear-gradient(135deg, #eb59a6, #704eed);
   border-radius: 20px;
   font-size: 14;
+}
+
+.nut-input-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--nut-input-bg);
+  height: 48px;
+  border-radius: 8px;
+  padding: 0px 8px;
 }

@@ -25,5 +25,14 @@ export default defineConfig({
         `
       }
     }
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000', // 目标服务器地址
+        changeOrigin: true, // 是否改变请求头中的 Origin
+        rewrite: (path) => path.replace(/^\/api/, '') // 重写路径
+      }
+    }
   }
 })
