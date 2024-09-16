@@ -2,13 +2,13 @@
   <div class="login">
     <nut-form label-position="top" star-position="left">
       <nut-form-item label="姓名" required>
-        <nut-input v-model="formData.name" placeholder="请输入姓名" type="text">
-          <template #left> 121 </template>
-          <template #right> 122 </template>
+        <nut-input v-model="formData.account" placeholder="请输入姓名" type="text">
+          <template #left> icon </template>
+          <template #right> icon </template>
         </nut-input>
       </nut-form-item>
-      <nut-form-item label="年龄" required star-position="left">
-        <nut-input v-model="formData.age" placeholder="请输入年龄" type="text" />
+      <nut-form-item label="密码" required star-position="left">
+        <nut-input v-model="formData.pwd" placeholder="请输入密码" type="password" />
       </nut-form-item>
       <nut-form-item>
         <nut-button type="primary" class="login-btn" @click="handleLogin">登录</nut-button>
@@ -20,17 +20,20 @@
 import { ref } from 'vue'
 import { fetchLogin } from '@/service/api'
 import { Md5 } from 'ts-md5'
+import { useAuthStore } from '@/store/auth';
+const auth = useAuthStore();
 const formData = ref<any>({
-  name: '',
-  age: ''
+  account: '',
+  pwd: ''
 })
 
 const handleLogin = async () => {
   const params: any = {
-    account: '',
-    pwd: Md5.hashStr('')
+    account: formData.value.account,
+    pwd: Md5.hashStr(formData.value.pwd)
   }
   const res: any = await fetchLogin(params)
+  auth.setToken(res.token);
   console.log(res)
 }
 </script>
