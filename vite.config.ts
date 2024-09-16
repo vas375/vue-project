@@ -27,12 +27,13 @@ export default defineConfig({
     }
   },
   server: {
+    host: true,
+    // 仅在 proxy 中配置的代理前缀， mock-dev-server 才会拦截并 mock
+    // doc: https://github.com/pengzhanbo/vite-plugin-mock-dev-server
     proxy: {
-      '/api': {
-        target: 'http://localhost:5000', // 目标服务器地址
-        changeOrigin: true, // 是否改变请求头中的 Origin
-        rewrite: (path) => path.replace(/^\/api/, '') // 重写路径
+      "^/dev-api": {
+        target: ""
       }
     }
-  }
+  },
 })
