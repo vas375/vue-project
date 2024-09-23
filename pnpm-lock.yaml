@@ -14,6 +14,9 @@ importers:
       '@vueuse/core':
         specifier: ^11.0.3
         version: 11.0.3(vue@3.4.38(typescript@5.4.5))
+      animate.css:
+        specifier: ^4.1.1
+        version: 4.1.1
       axios:
         specifier: ^1.7.7
         version: 1.7.7
@@ -84,6 +87,9 @@ importers:
       '@types/nprogress':
         specifier: ^0.2.3
         version: 0.2.3
+      '@types/vue':
+        specifier: ^2.0.0
+        version: 2.0.0(typescript@5.4.5)
       '@vitejs/plugin-vue':
         specifier: ^5.0.5
         version: 5.1.2(vite@5.4.2(@types/node@20.16.1)(sass@1.77.8)(terser@5.33.0))(vue@3.4.38(typescript@5.4.5))
@@ -1229,6 +1235,10 @@ packages:
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
 
+  '@types/vue@2.0.0':
+    resolution: {integrity: sha512-WDElkBv/o4lVwu6wYHB06AXs4Xo2fwDjJUpvPRc1QQdzkUSiGFjrYuSCy8raxLE5FObgKq8ND7R5gSZTFLK60w==}
+    deprecated: This is a stub types definition for vuejs (https://github.com/vuejs/vue). vuejs provides its own type definitions, so you don't need @types/vue installed!
+
   '@types/web-bluetooth@0.0.20':
     resolution: {integrity: sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==}
 
@@ -1460,6 +1470,9 @@ packages:
 
   ajv@8.17.1:
     resolution: {integrity: sha512-B/gBuNg5SiMTrPkC+A2+cW0RszwxYmn6VYxB/inlBStS5nx6xHIt/ehKRhIMhqusl7a8LjQoZnjCs5vhwxOQ1g==}
+
+  animate.css@4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
 
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
@@ -4783,6 +4796,12 @@ snapshots:
 
   '@types/trusted-types@2.0.7': {}
 
+  '@types/vue@2.0.0(typescript@5.4.5)':
+    dependencies:
+      vue: 3.4.38(typescript@5.4.5)
+    transitivePeerDependencies:
+      - typescript
+
   '@types/web-bluetooth@0.0.20': {}
 
   '@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)':
@@ -5131,6 +5150,8 @@ snapshots:
       fast-uri: 3.0.1
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
+
+  animate.css@4.1.1: {}
 
   ansi-regex@5.0.1: {}
 

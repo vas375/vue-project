@@ -8,3 +8,11 @@ export function fetchLogin(params: any) {
     params
   });
 }
+
+// 
+export function getVipInfo() {
+  return http.request({
+    url: "/api/account/vipInfo",
+    method: "get",
+  });
+}
