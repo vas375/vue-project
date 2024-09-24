@@ -4,6 +4,7 @@ import Axios, {
   type AxiosResponse,
   type AxiosRequestConfig
 } from "axios";
+import { useAuthStore } from '@/store/auth';
 import NProgress from "../progress";
 import { showToast } from '@nutui/nutui'
 
@@ -44,9 +45,9 @@ class Http {
       config => {
         NProgress.start();
         // 发送请求前，可在此携带 token
-        // if (token) {
-        //   config.headers['token'] = token
-        // }
+        const auth = useAuthStore();
+        const token = auth.token || localStorage.getItem('token');
+        if (token)  config.headers.Authorization = `${token}`;
         return config;
       },
       (error: AxiosError) => {

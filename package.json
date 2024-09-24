@@ -17,6 +17,7 @@
   "dependencies": {
     "@nutui/nutui": "^4.3.12",
     "@vueuse/core": "^11.0.3",
+    "animate.css": "^4.1.1",
     "axios": "^1.7.7",
     "better-scroll": "^2.5.1",
     "dayjs": "^1.11.13",
@@ -42,6 +43,7 @@
     "@types/jsdom": "^21.1.7",
     "@types/node": "^20.14.5",
     "@types/nprogress": "^0.2.3",
+    "@types/vue": "^2.0.0",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vue/eslint-config-prettier": "^9.0.0",
