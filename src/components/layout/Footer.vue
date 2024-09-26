@@ -8,6 +8,7 @@
 </template>
 <script lang="ts" setup>
 import HomeH from '@/assets/images/footer/home.png'
+import { $t } from '@/locales';
 import { computed, reactive, ref } from 'vue'
 import {useRouter,useRoute} from 'vue-router'
 const router = useRouter()
@@ -15,7 +16,7 @@ const route = useRoute()
 const currentIndex = ref(0)
 const list = reactive([
   {
-    name:"首页",
+    name:$t('tabbar.home'),
     img: computed(()=> currentIndex.value === 0? HomeH: HomeH),
     path:'root'
   },
