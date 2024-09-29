@@ -4,7 +4,8 @@ declare namespace I18nType {
   interface Schema {
     lang: {
       zh:string;
-      en:string
+      en:string;
+      ko:string
     },
     tabbar: {
       home: string;

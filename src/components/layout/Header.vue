@@ -67,8 +67,8 @@ const openLanguageShow = ()=>{
 const close = () => {
   show.value = false
 }
-const choseLang = (item:any) => {
-  setLocale(item.key);
+const choseLang = (action:any) => {
+  setLocale(action.key);
 }
 </script>
 <style lang="scss" scoped>
