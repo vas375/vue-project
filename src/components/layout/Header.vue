@@ -20,7 +20,7 @@
       <div>语言</div>
       <div><img :src="Close"  @click="close"/></div>
     </div>
-    <div class="list" v-for="(item,index) in menuItems" :key="index">
+    <div class="list" v-for="(item,index) in menuItems" :key="index"  @click="choseLang(item)">
       {{ item.name }}
     </div>
     </div>
@@ -35,18 +35,22 @@ import { useAuthStore } from '@/store/auth';
 import LOGO from '@/assets/images/logo.png'
 import International from '@/assets/images/international.png'
 import Close from '@/assets/images/action-close.png'
+import { setLocale ,$t } from "@/locales";
 const auth = useAuthStore();
 const router = useRouter()
 const show = ref(false)
 const menuItems = [
   {
-    name: '中文'
+    name: $t('lang.zh'),
+    key:'zh-cn'
   },
   {
-    name: '英文'
+    name: $t("lang.en"),
+    key: "en"
   },
   {
     name: '韩文',
+    key: "ko"
   }
 ]
 const onClick = () => {
@@ -62,6 +66,9 @@ const openLanguageShow = ()=>{
 }
 const close = () => {
   show.value = false
+}
+const choseLang = (action:any) => {
+  setLocale(action.key);
 }
 </script>
 <style lang="scss" scoped>
@@ -119,6 +126,10 @@ const close = () => {
   }
 }
 
+.list{
+  height: 40px;
+  cursor: pointer;
+}
 :deep(.nut-popup){
   background-color: none !important;
 }
