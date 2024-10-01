@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div class="items"  v-for="(item,index) in list" :key="index"  @click="handleClick(item)">
+    <div class="items" v-for="(item, index) in list" :key="index" @click="handleClick(item)">
       <img :src="item.img" />
       <div>{{ item.name }}</div>
     </div>
@@ -8,62 +8,65 @@
 </template>
 <script lang="ts" setup>
 import HomeH from '@/assets/images/footer/home.png'
-import { $t } from '@/locales';
-import { computed, reactive, ref } from 'vue'
-import {useRouter,useRoute} from 'vue-router'
+import { $t } from '@/locales'
+import { computed, onMounted, reactive, ref } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 const router = useRouter()
 const route = useRoute()
 const currentIndex = ref(0)
 const list = reactive([
   {
-    name:$t('tabbar.home'),
-    img: computed(()=> currentIndex.value === 0? HomeH: HomeH),
-    path:'root'
+    name: computed(() => $t('tabbar.home')),
+    img: computed(() => (currentIndex.value === 0 ? HomeH : HomeH)),
+    path: 'root'
   },
   {
-    name:"活动",
-    img: computed(()=> currentIndex.value === 0? HomeH: HomeH),
-    path:'root'
+    name: '活动',
+    img: computed(() => (currentIndex.value === 0 ? HomeH : HomeH)),
+    path: 'root'
   },
   {
-    name:"个人",
-    img: computed(()=> currentIndex.value === 0? HomeH: HomeH),
-    path:'personal'
+    name: '个人',
+    img: computed(() => (currentIndex.value === 0 ? HomeH : HomeH)),
+    path: 'personal'
   },
   {
-    name:"客服",
-    img: computed(()=> currentIndex.value === 0? HomeH: HomeH),
-    path:'root'
+    name: '客服',
+    img: computed(() => (currentIndex.value === 0 ? HomeH : HomeH)),
+    path: 'root'
   },
   {
-    name:"推广",
-    img: computed(()=> currentIndex.value === 0? HomeH: HomeH),
-    path:'root'
-  },
+    name: '推广',
+    img: computed(() => (currentIndex.value === 0 ? HomeH : HomeH)),
+    path: 'root'
+  }
 ])
 
-const handleClick = (item:any) =>{
-  if(item.path === route.name)  return
-  router.push({name:item.path})
+const handleClick = (item: any) => {
+  if (item.path === route.name) return
+  router.push({ name: item.path })
 }
+onMounted(() => {
+  console.log($t)
+})
 </script>
 <style scoped lang="scss">
-.footer{
+.footer {
   height: 60px;
   padding: 10px 15px;
   display: flex;
   background: var(--nut-white);
   box-shadow: 0 -2px 4px #00000040;
-  .items{
+  .items {
     flex: 1;
     text-align: center;
     cursor: pointer;
-    img{
+    img {
       height: 28px;
       width: 28px;
     }
-    div{
-      margin-top:-12px;
+    div {
+      margin-top: -12px;
       font-size: var(--nut-font-size-2);
       color: var(--nut-text-color4);
     }

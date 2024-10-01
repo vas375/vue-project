@@ -8,8 +8,8 @@ import router from './router'
 import NutUI from '@nutui/nutui'
 import '@nutui/nutui/dist/style.css'
 import VueNativeSock from 'vue-native-websocket-vue3'
-import "normalize.css/normalize.css";
-import i18n from "./locales";
+import 'normalize.css/normalize.css'
+import i18n from './locales'
 const app = createApp(App)
 // Replace 'ws://your-websocket-server' with your actual WebSocket server URL
 // app.use<any>(VueNativeSock, 'ws://your-websocket-server', {
@@ -21,5 +21,5 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(NutUI)
-app.use(i18n);
+app.use(i18n)
 app.mount('#app')
