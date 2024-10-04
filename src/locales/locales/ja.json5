@@ -1,0 +1,454 @@
+{
+	project:'勝つ勝つハッシュ',
+	game: {
+		luckHash: 'ラッキーハッシュ',
+		hashNiuNiu: '哈希牛牛',
+		hashDanshuang: '哈希单双',
+		hashPK10: '哈希PK10',
+
+		appDownLoad:'ダウンロード',
+		scanCodeTransfer:'QR転送',
+		accountTransfer:'口座振替',
+		contact:'コール',
+		oneToOneservice:'独占カスタマーサービス',
+		copy:'コピー',
+		changeLanguage:'言語',
+
+		copyed:'コピー成功！',
+		copyErr:'コーピエラー！',
+
+		noData:'データなし',
+		noMore:'データなし',
+		loadMore:'ダウンロード',
+		rootTitle:'ホーム',
+		shareTitle: '招待',
+		meTitle:'マイページ',
+
+		alertTip:'ヒント',
+		netError:'ネットワークが良くありません。再試行をクリックしてください。',
+		btnText:'リトライ',
+
+		footer:'プロのハッシュゲームプラットフォーム',
+	},
+  home: {
+	  name: 'ホーム',
+		hashGame: 'ゲーム',
+		rank: 'ランク',
+		coinChange: '両替',
+		process: 'プロセス',
+		questions: '質問',
+		gameHelp: 'お問い合わせ',
+		gameGoods: '利点',
+		winRule:'勝利のルール',
+		promote:'促進',
+		language:'言語',
+
+		relatedSoftware:'相关软件',
+		transferAddress:'送金',
+		rules:'ルール',
+		steps:'過程',
+		rank:'ランク',
+		exchange:'両替',
+	},
+	bannerImg: {
+		bannerText1: '最大のブロックチェーンゲームプラットフォーム',
+		bannerText2: '公平',
+		bannerText3: '公衆',
+		bannerText4: '安全',
+		bannerText5: 'オッズ{num}',
+		bannerText6: '業界最高',
+		bannerText7: 'ハッシュ結果',
+		bannerText8: 'リアルタイム',
+		bannerText9: '勝利ボーナス',
+		bannerText10: '自動支払い',
+
+		tip: '分散型ウォレットを使用する',
+		clickCopy: 'コピー',
+
+	},
+	betLimit: {
+		title: '金額制限',
+		limit1: 'TRXの量：{min}-{max}',
+		limit2: 'USDTの量：{min}-{max}',
+		limit3: '最低額を下回る場合は抽選に参加できません',
+		limit3_1: '返金不可',
+		limit3_2: '。',
+		limit4: '上限額を超える場合は抽選に参加できません',
+		limit4_1: '手数料の2倍を差し引いた',
+		limit4_2: '返金を返す',
+		limit5: '宝くじにいる場合、小数点後の数字は無視されます。',
+
+	},
+	ruler: {
+		title: '勝利のルール',
+		detail1_1: '振込金額の1桁とブロックハッシュの最後の数字（文字ではなく数字のみ）が',
+		detail1_2: '奇数',
+		detail1_3: 'または',
+		detail1_4: '偶数',
+		detail1_5: 'の場合、賞品は',
+		detail1_6: '正常に獲得',
+		detail1_7: 'されます。',
+
+		detail2_1: '宝くじに当選した後、システムは5秒以内にデジタルで返金します',
+		detail2_2: '{num}倍',
+		detail2_3: '自動的に返します。 （資金の安全を確保するためのブロックチェーン技術により、すべての取引を記録して改ざん防止する必要があり、デジタル通貨を使用する世界の人口は膨大であるため、５秒内にアカウントに遅れる可能性があります、お待ちしております',
+
+	},
+	examples: {
+		title: '受賞例',
+		expMount :'送金金額：',
+		expHash: '転送のブロックハッシュ:',
+
+		exp1_1: '転送量の1桁は偶数であり、ブロックハッシュ値が文字を無視した後の最後の数字も偶数です。',
+		exp1_2: '転送量の1桁は単数（小数部は自動的に無視されます）であり、ブロックハッシュ値が文字を無視した後の最後の数字も単数です。',
+		exp1_3: '転送量の1桁は偶数であり、ブロックハッシュ値の後の最後の数字は文字を無視します。',
+		exp1_4: '振込金額の1桁は単数（小数部は自動的に無視されます）であり、文字を無視したブロックハッシュ値の後の最後の数字は偶数です。',
+
+
+		exp6: '結果',
+		exp7: '当たり',
+		exp8: 'システムから返される金額：',
+
+		exp9: "結果",
+		exp10: 'はずれ',
+		exp11: 'システムは返金できません。',
+	},
+	rank: {
+		title: 'ランキング',
+		currentRank: 'ライブデータ',
+		dayRank: '当日ランキング',
+		weekdayRank: '週ランキング',
+		betAddr: '転送アドレス',
+		amount: '支払い額',
+		time : '時間',
+		no:'ランキング',
+	},
+	exchange: {
+		title: '両替',
+		usdtToTrx: 'USDTからTRX',
+		trxToUSDT: 'TRXからUSDT',
+		input: '入力してください',
+		expected: '期待される',
+		caculagte: '計算',
+		compute: '償還額=受け入れ額 *市場価格 - ガソリン料金',
+		tip: 'USDTをTRXに、またはTRXをUSDTに交換する必要がある場合は、以下のTRON交換ウォレットアドレスに転送できます。プラットフォームが無料で交換します。',
+		addrTitle: 'ウォレットの交換:',
+		usdtLimit:'USDT制限:',
+		trxLimit:'TRX制限:',
+	},
+	steps: {
+		title: 'プロセス',
+
+		process1:'新しいウォレット',
+		process2:'暗号を購入する',
+		process3:'抽選転送',
+		process4:'お金を取り戻す',
+
+
+		step1: 'デジタル通貨[分散型]ウォレットを登録する',
+		step1_1: '分散型ウォレットにサインアップする',
+
+		step1_tutorials1:'pages/en_tutorials1.html', //imtoken
+		step1_tutorials2:'pages/en_tutorials2.html', //Wnbit
+		step1_tutorials3:'https://community.trustwallet.com/c/helpcenter/basics/11', //Trust Wallet
+		step1_tutorials4:'https://tronlinkorg.zendesk.com/hc/en-us', //TronLink
+		step1_tutorials5:'pages/en_tutorials5.html', //Bitple
+		step1_tutorials6:'https://help.tokenpocket.pro/en/wallet-operation/how-to-create-a-wallet/bttc-use-guide', //Token pocket
+
+
+		step2: 'デジタル通貨取引所でUSDTとTRXを購入する',
+		step2_1: '取引所に行き、USDTとTRXを購入します',
+
+		step2_detail_1:'Gate',
+		step2_detail_2:'binance',
+		step2_detail_3:'okex',
+		step2_detail_4:'ZB',
+		step2_detail_5:'huobi',
+		step2_detail_6:'FTX',
+
+		step2_tutorials1:'https://www.gate.io/ja/help/guide',
+		step2_tutorials2:'https://academy.binance.com/ja/articles/binance-beginner-s-guide',
+		step2_tutorials3:'https://www.okx.com/support/hc/en-us/sections/360000033031',
+		step2_tutorials4:'https://www.zb.com/help/guides/1',
+		step2_tutorials5:'https://www.huobi.com/support/en-us/list/360000010372',
+		step2_tutorials6:'https://help.ftx.com/hc/en-us',
+
+
+		step3: '宝くじに参加するためにこのプラットフォームに送金する',
+		step3_1:'ラッキードローに参加するための送金',
+
+		step3_detail_1:'指定した金額を下記の住所に送金すると、抽選に参加できます。',
+		step3_detail_2:'プラットフォームの公式支払いアドレス',
+
+
+		step4: '勝つための自動支払い',
+		step4_1: '勝つための自動支払い',
+
+
+		step4_detail_1: 'ブロックハッシュ値の最後の桁と転送量の1桁の両方が',
+		step4_detail_2: '奇数',
+		step4_detail_3: 'または',
+		step4_detail_4: '偶数',
+		step4_detail_5: 'の場合、賞品を獲得できます。 あなたは{num}倍のデジタル通貨報酬を得ることができます。',
+
+		platform: 'プラットホーム',
+		url: 'リンク',
+		tutorial: 'チュートリアル',
+		goTutorial: '見直す',
+	},
+	advantage: {
+		whyUs: '利点',
+		title1 :'公正で透明',
+		title2 :'安全で信頼',
+		title3 :'便利で速い',
+		title4 :'専用サービス',
+
+		detail1_1: '私たちは誰もが公正な力で守ります',
+		detail1_2: 'ブロックハッシュ値は、分散型ブロックチェーンネットワークにランダムに基づいています',
+		detail1_3: 'プラットフォームでデータを操作することはできず、すべてのレコードは透過的で追跡可能であることを認識してください',
+
+		detail2_1: '顧客情報と財産セキュリティを確保することにコミットしています',
+		detail2_2: '実際の登録はありません,個人情報をバインドする必要はありません',
+		detail2_3: 'リスク - フリーカードのリスク',
+		detail2_4: 'リチャージ預金は必要ありません',
+		detail2_5: 'レビューのために撤退申請を申請する必要はありません',
+		detail2_6: '非支払い流量の制限',
+		detail2_7: 'プラットフォームの資金プールはいつでも確認できます',
+
+		detail3_1: '私たちはミニマリストの流れ /高速派宝くじを追求しています',
+		detail3_2: 'たった1つの[分散化]デジタルウォレット、すぐに宝くじに参加します',
+		detail3_3: 'ゲームプレイ、戦略、機器の制限、いつでもどこでも、あなたが望むものはありません',
+		detail3_4: '宝くじに当選してから10秒以内にアカウントに自動的にクレジットが付与され、ゲームは中断されず、経験は豊富です',
+
+		detail4_1: '1つから1つの説明、効率的な返信。',
+		detail4_2: 'あなたが自由に選択するためのさまざまな連絡先情報。',
+	},
+
+	faq: {
+		title: '質問',
+
+		jumpText:'点击查看百度百科哈希值介绍',
+		open:'拡大',
+		close:'閉鎖',
+
+		q1: 'ブロックハッシュとは何ですか？',
+		a1: 'ブロックハッシュはデータの詩のDNAであり、すべてのブロックハッシュは一意で、ランダムで、壊れないものです。',
+		a1_2: '',
+		a1_3: '',
+		a1_2url:'',
+		jumptext1:'クリックしてハッシュ値の紹介を表示',
+		jumpUrl1: 'https://www.javatpoint.com/how-block-hashes-work-in-blockchain',
+
+		q2: 'ブロックチェーンとは何ですか？',
+		a2: 'ブロックチェーンは本質的に共有データベースであり、ブロックチェーンに格納されているデータまたは情報には、偽造不可能、トレーサビリティ、トレーサビリティ、オープン性と透明性、および集合的なメンテナンスという特徴があります。',
+		a2_2: '',
+		a2_3: '',
+		a2_2url:'',
+        jumptext2:'ブロックチェーンの紹介を見る',
+		jumpUrl2: 'https://ja.wikipedia.org/wiki/Blockchain',
+
+		q3: 'Q3：集中財布？分散財布？集中ウォレットを介した送金を追跡できないのはなぜですか？',
+		a3: '例：ウォレットへの住所はaです。10USDTをEに転送しました。トランザクションハッシュを使用してトレースを使用す',
+		a3_2: '',
+		a3_3: '',
+		a3_2url:'',
+		jumptext3:'ブロックチェーンウォレットの違いを確認してください',
+		jumpUrl3: 'https://www.blog.eidoo.io/post/7-major-differences-between-centralized-and-defi-wallets',
+
+		checkdiff: '点击查看区块链钱包区别',
+
+		q4: 'なぜ連続して宝くじに当たりことができるのですか？',
+		a4: '第一に、連続して何度も宝くじに当選しないことは、小さな確率のイベント（',
+		a4_2: '小さな確率の時間の定義',
+		a4_3: '）であり、第二に、宝くじに当選するかどうかはランダムなイベントであり、ランダムなイベントの頻度は傾向があります安定した値に。 非反復の場合、物事が現れる確率はすべての人に等しく、この場合はすべての人が公平です。 同時に、ランダムイベントは大数の法則に従います（実験が変更されていない状態で、実験を何度も繰り返し、ランダムイベントの頻度は大数の法則の定義と同様です）、転送の頻度が増えると、勝者と敗者は宝くじに当選しなくなり、確率は安定した値になる傾向があります。 したがって、賭けを続けてください。連続して何度も宝くじに当選しないという小さな確率のイベントの後、転送頻度が高くなるにつれて、宝くじに当選する確率の合計が向上します。',
+		a4_2url:'https://ja.wikipedia.org/wiki/Law_of_large_numbers',
+		jumptext4:'',
+		jumpUrl4: '',
+
+		q5: 'なぜ資金を返すのが遅れるのですか？',
+		a5: 'ブロックチェーンネットワークでトラフィックのピークが発生すると、遅延やトランザクションのバックログが発生し、需要が供給を上回り、鉱夫が処理対象を選択できるため、トランザクション料金が押し上げられます。 健全な取引手数料を入れても、お待たせする場合があります.',
+		a5_2: '',
+		a5_3: '',
+		a5_2url:'',
+		jumptext5:'',
+		jumpUrl5: '',
+
+		q6: '交換するときにUSDTの種類が非常に多いのはなぜですか？どちらを選ぶべきですか？',
+		a6: 'USDT転送をサポートする世界的に有名なパブリックチェーンがたくさんあり（',
+		a6_2: 'クリックして世界的に有名なパブリックチェーンの紹介を表示',
+		a6_3: '）、このプラットフォームのハッシュゲームはTRONTRC20テクノロジーに基づいています。 したがって、プラットフォーム上のすべてのハッシュゲームの賭けアドレスはUSDT-TRC20に属し、USDT-TRC20を選択する必要があります。他のタイプを選択すると、プラットフォームは賭け​​を受け取ることができず、両方に損失が発生します。とプラットフォーム。',
+		a6_2url:'https://ja.wikipedia.org/wiki/Law_of_large_numbers',
+		jumptext6:'',
+		jumpUrl6: '',
+
+
+		q7: '間違った住所に転送するか、間違った種類のUSDTを選択した場合、それを取り戻すことはできますか？',
+		a7: 'たとえば、コインを送金する場合、USDT-TRC20タイプを選択する必要がありますが、他のタイプのUSDT-OMNIまたはUSDT-ERC20を選択すると、コインが失われ、この状況を回復できません。',
+		a7_2: '間違った住所に資金を送った場合、資金を取り戻すことはできますか？',
+		a7_3: '',
+		a7_2url:'https://paxful.com/support/ja',
+		jumptext7:'',
+		jumpUrl7: '',
+
+	},
+	login:{
+		userLogin:'ログイン',
+		accountTip:'ユーザー名を入力してください',
+		pwdTip:'パスワードを入力してください',
+		login:'ログイン',
+		register: '新規ユーザーの登録',
+		loginLater:'後でログインする',
+
+		loginTip0:'ログイン成功',
+		loginTip1:'ログインアカウントは空にできません',
+		loginTip2:'ログインパスワードは空にできません',
+		loginTip3:'不正なアカウントまたはパスワード',
+
+		inputVerCode:'検証コード',
+
+		userRegister:'ユーザー登録',
+		regAccountTip:'アカウントをご入力ください',
+		regAddrTip:'ウォレットアドレスを入力してください',
+		regPwdTip:'6〜20桁のログインパスワードを設定してください',
+		regRePwdTip:'ログインパスワードをもう一度入力してください',
+		regInviteCode:'招待コードを入力してください',
+
+		regBtnRegister:'今すぐ登録する',
+		regLogin:'今すぐサインイン',
+		inputCode:'検証コードを入力してください',
+
+		regTip0:'今すぐ登録',
+		regTip1:'アカウントは空にできません',
+		regTip2:'アカウントが占有されている',
+		regTip3:'ログインパスワードは空にできません',
+		regTip4:'不正なログインパスワード形式',
+		regTip5:'2回入力したパスワードが一致しません',
+	},
+
+	me:{
+		account:'アカウント',
+		addr:'ウォレットアドレス',
+
+		menuMyForm:'報告',
+		menuBetRecord:'賭け記録',
+		menuShare:'シェア',
+		menuEditPwd:'パスワードの変更',
+
+		totalBet:'総賭け',
+		totalWin:'総勝負',
+		today:'今日',
+		lastSomeDays:'過去{num}日',
+		allGames:'全てゲーム',
+		time:'時間',
+		game:'ゲーム',
+		bet:'賭ける',
+		winLose:'勝負',
+
+		saveImg:'画像保存',
+		shareUrl:'招待リンク',
+		inviteCode:'招待コード',
+		copyUrl:'コピー',
+
+
+		pwdEditTip1:'元のパスワードを入力してください',
+		pwdEditTip2:'新しいパスワードを6〜20桁で設定してください',
+		pwdEditTip3:'新しいパスワードをもう一度入力してください',
+		btnEditPwd:'変更',
+
+		pwdEditResult0:'変更に成功',
+		pwdEditResult1:'元のパスワードが間違っています',
+		pwdEditResult2:'新しいパスワードが正しい形式ではありません',
+		pwdEditResult3:'2つの新しいパスワードエントリが矛盾しています',
+
+
+		btnQuit:'ログアウト',
+
+	},
+	promote:{
+		myPromote:'私の昇進',
+		myReward:'招待状の報酬',
+		myDirectly:'直接会員',
+		rewardRecords:'記録を拾う',
+
+
+		canGetReward:'利用可能な手数料',
+		btnGetReward:'出金',
+
+		group:'チーム',
+		groupTotal:'チームの総数',
+		directlyMember:'直接会員',
+		otherMember:'その他の会員',
+
+		groupTip:'每邀请一位即可获得相应佣金',
+		allGroup:'もっと',
+		copyHref:'コピー',
+
+		brokerage:'招待報酬',
+		totalBrokerage:'累積招待報酬',
+		gotBrokerage:'受取招待報酬',
+		yesterdayBrokerage:'昨日の和解招待報酬',
+
+		brokeragePercent:'報酬率',
+		caculagteTime:'決済前日の毎日{time}招待報酬',
+		memberLevelTitle:'会員レベル',
+		brokeragePercentTitle:'リベート率(賭け金)',
+		level1:'レベル1会員',
+		level2:'レベル2会員',
+		level3:'レベル3会員',
+
+		more:'詳細を確認',
+
+
+
+		caculateTime:'決済時間',
+		caculateAmount:'決済金額',
+		caculateState:'決済状況',
+
+		state1:'未決済',
+		state2:'已決済',
+
+
+		registDate:'登録時間',
+		account:'アカウント',
+		betAmount:'賭け金額',
+
+
+		gotTime:'受取時間',
+		gotAmount:'受取金额',
+		orderState:'注文の状況',
+
+		orderState0:'確認予定',
+		orderState1: '進行中',
+		orderState2: '成功',
+		orderState3: '失敗',
+
+		receivedSuccess:"正常に受信しました",
+		minReceiveUsdt:'最小請求額は{num}usdtです',
+		minReceiveTrx:'最小請求額は{num}trxです',
+	},
+	901:'ログイン検証に失敗しました',
+  902:' ログインの有効期限が切れました',
+  1000:'失敗',
+  1001:'ユーザーネームまたはパスワードが違います',
+  1002:'パラメータエラー',
+  1003:'アカウントは既に存在します',
+  1004:'検証コードが空です',
+  1005:'アカウントが空です',
+  1006:'パスワードが空です',
+  1007:'招待コードが存在しません',
+  1008:'検証コードエラー',
+  1009:'ウォレットアドレスは空にできません',
+  1010:'ウォレットアドレスは既存です',
+  1011:'フィールドエラー',
+  1012:'ブラックリスト',
+  1013:'利用可能な金額はありません',
+  1014:'最低回収額を下回る場合は、カスタマーサービスにご連絡ください。',
+  1015:'頻繁なリクエスト',
+	1016 : "回収可能な金額の制限",
+	1017: 'ウォレットアドレスの形式が正しくありません。Tで始まる34桁のウォレットアドレスを入力してください',
+	1018: "ユーザー名の形式が正しくありません。6〜20文字の文字と数字を入力してください",
+	1019: "アカウントに異常がある場合は、カスタマーサービスにご連絡ください。",
+	1020: "", // 账号被封，踢出登录
+	500: "内部サーバーのエラー",
+	NETWORK_ERROR:'内部サーバーのエラー',
+}
