@@ -14,13 +14,13 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: () => import('@/views/login/login.vue'),
-      meta:{ requiresAuth:false }
+      meta:{title:'',requiresAuth:false }
     },
     {
       path: '/personal',
       name: 'personal',
       component: () => import('@/views/personal/index.vue'),
-      meta:{ requiresAuth:true ,redirect:'login'}
+      meta:{title:'', requiresAuth:true ,redirect:'login'}
     }
   ]
 })

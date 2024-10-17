@@ -1,4 +1,4 @@
-import { langUtils } from '../../language/langUtils';
+//import { langUtils } from '../../language/langUtils';
 
 /**
  * 获取assets静态资源
@@ -32,7 +32,7 @@ export function getAssetsIconFile(name: string) {
  * @param name 图片名称
  * @returns assets
  */
-export function getI18nAssetsFile(name: string) {
-  const curlang = langUtils.getCurLang();
-  return new URL(`../../assets/i18n/${curlang}/${name}.png`, import.meta.url).href;
-}
+// export function getI18nAssetsFile(name: string) {
+//   const curlang = langUtils.getCurLang();
+//   return new URL(`../../assets/i18n/${curlang}/${name}.png`, import.meta.url).href;
+// }
