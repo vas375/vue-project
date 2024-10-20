@@ -55,3 +55,11 @@ export function hashGameOdds() {
     //headers: {'langCode':'zh'}
   });
 }
+
+// 首页轮播
+export function getBannerList() {
+  return http.request({
+    url: `/api/getBanner`,
+    method: "get",
+  });
+}

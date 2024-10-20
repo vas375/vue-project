@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { fetchGetConfig,fetchAccount,getGameConfig,getBalanceWallet,hashGameOdds} from '@/service/api'
+import { fetchGetConfig,fetchAccount,getGameConfig,getBalanceWallet,hashGameOdds} from '@/service'
 import {getUserInfo} from '@/utils'
 export const useConfigStore = defineStore( {
   id: 'config',

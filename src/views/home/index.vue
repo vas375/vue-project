@@ -31,22 +31,29 @@
         </div>
         
         <!-- 轮播图 -->
-        <!-- <div>
+        <div>
           <swiper
+            :modules="modules"
+            :loop="true"
+            :autoplay="{ delay: 3000, disableOnInteraction: false}"
             :slides-per-view="1"
-            :space-between="50"
-            
+            :space-between="0"
+            :scrollbar="{draggable: true}"
+            :speed="2000"
+            :observe-parents="true"
+            :observer="true"
           >
             <SwiperSlide  v-for="(item,index) in list" :key="index">
-              <img :src="item" alt="" style="height: 120px; width: 375px;">
+              <img :src="item" alt="" style="height: 120px; width:100%;">
             </SwiperSlide>
           </swiper>
-        </div> -->
+        </div>
 
        <!-- 游戏列表 -->
+      
 
 
-      <nut-button  @click="send" primary>send message</nut-button>
+      <!-- <nut-button  @click="send" primary>send message</nut-button> -->
       </div>
     </template>
     <template #foot>
@@ -59,18 +66,25 @@ import { onMounted, ref } from 'vue'
 import Header from '@/components/layout/Header.vue'
 import Layout from '@/components/layout/Layout.vue'
 import Foot from '@/components/layout/Footer.vue'
-import USDT from '@/assets/images/usdt.png'
-import TRX from '@/assets/images/trx.png'
+import USDT from '@/assets/images/global/usdt.png'
+import TRX from '@/assets/images/global/trx.png'
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y,Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { PushStream } from '@/longpoll/pushstream'
+import {getBannerList} from '@/service/index'
 
-const list = ref<any>([
-  'https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg',
-  'https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg',
-  'https://storage.360buyimg.com/jdc-article/welcomenutui.jpg',
-  'https://storage.360buyimg.com/jdc-article/fristfabu.jpg'
-])
+const modules = [Navigation, Pagination, Scrollbar, A11y,Autoplay]
+const list = ref<any>([])
+
+
+//初始化轮播图
+const initBanner = async () => {
+  const res:any = await getBannerList()
+  list.value = res.data.map((item:any) => item.image)
+}
 const pushstream = ref<any>(null)
 
 const initContenct = () => {
@@ -103,7 +117,8 @@ const send = () => {
 
 const openDetail = () => {}
 onMounted(() => {
-  initContenct();
+  //initContenct();
+  initBanner()
 })
 </script>
 <style lang="scss" scoped>

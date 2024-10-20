@@ -1,7 +1,7 @@
 <template>
   <nut-navbar @click-right="onClick">
     <template #left>
-      <img :src="LOGO" alt=""  style="height: 24px;"/>
+      <img :src="LOGO" alt=""  style="height:35px;"/>
     </template>
     <template #right> 
       <div  v-show="!auth.isAuthenticated">
@@ -32,9 +32,9 @@
 import { onMounted, ref } from 'vue'
 import {useRouter} from 'vue-router'
 import { useAuthStore } from '@/store/auth';
-import LOGO from '@/assets/images/logo.png'
-import International from '@/assets/images/international.png'
-import Close from '@/assets/images/action-close.png'
+import LOGO from '@/assets/images/global/head-logo.png'
+import International from '@/assets/images/global/international.png'
+import Close from '@/assets/images/global/action-close.png'
 import { setLocale ,$t } from "@/locales";
 const auth = useAuthStore();
 const router = useRouter()
@@ -74,8 +74,8 @@ const choseLang = (action:any) => {
 <style lang="scss" scoped>
 :deep(.nut-navbar){
   height: 48px;
-  background: url(@/assets/images/header-bg.png) no-repeat ;
-  background-size: 100% 100%;
+  background: url(@/assets/images/header-bg.png) no-repeat !important;
+  background-size: 100% 100%  !important;
 }
 .login{
   border: 1px solid var(--nut-primary-color);
