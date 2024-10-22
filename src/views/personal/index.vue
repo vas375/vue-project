@@ -21,7 +21,7 @@ import Foot from '@/components/layout/Footer.vue'
 import { useAuthStore } from '@/store/auth';
 import { useDarkMode, useToggleDarkMode } from "@/hooks/useToggleDarkMode";
 import {useRouter} from 'vue-router'
-import {getVipInfo} from '@/service/api'
+import {getVipInfo} from '@/service'
 import { onMounted } from 'vue';
 const auth = useAuthStore();
 const router = useRouter()
