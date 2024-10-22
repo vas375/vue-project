@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { useAuthStore } from '@/store/auth';
+import { useAuthStore } from '@/store/auth'
 import Home from '../views/home/index.vue'
 
 const router = createRouter({
-  history: createWebHistory(),//import.meta.env.VITE_BASE_API
+  history: createWebHistory(), //import.meta.env.VITE_BASE_API
   routes: [
     {
       path: '/',
@@ -14,28 +14,28 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: () => import('@/views/login/login.vue'),
-      meta:{title:'',requiresAuth:false }
+      meta: { title: '用户登录', requiresAuth: false }
     },
     {
       path: '/personal',
       name: 'personal',
       component: () => import('@/views/personal/index.vue'),
-      meta:{title:'', requiresAuth:true ,redirect:'login'}
+      meta: { title: '个人主页', requiresAuth: true, redirect: 'login' }
     }
   ]
 })
 
 router.beforeEach((to, from, next) => {
-  const authStore = useAuthStore();
+  const authStore = useAuthStore()
   if (to.meta.requiresAuth && !authStore.isAuthenticated) {
-    if(to.meta.redirect){
-      next({ name:'login' });
-    }else{
-      next({ name:'root' });
+    if (to.meta.redirect) {
+      next({ name: 'login' })
+    } else {
+      next({ name: 'root' })
     }
   } else {
-    next();
+    next()
   }
-});
+})
 
 export default router

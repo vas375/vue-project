@@ -2,13 +2,14 @@ import './assets/main.scss'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-
+import { IconFont } from '@nutui/icons-vue'
 import App from './App.vue'
 import router from './router'
 import NutUI from '@nutui/nutui'
 import '@nutui/nutui/dist/style.css'
 import VueNativeSock from 'vue-native-websocket-vue3'
 import 'normalize.css/normalize.css'
+import '@nutui/icons-vue/dist/style_iconfont.css'
 import i18n from './locales'
 const app = createApp(App)
 // Replace 'ws://your-websocket-server' with your actual WebSocket server URL
@@ -22,4 +23,5 @@ app.use(createPinia())
 app.use(router)
 app.use(NutUI)
 app.use(i18n)
+app.use(IconFont)
 app.mount('#app')
