@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '@/store/auth';
-import Home from '../views/home.vue'
+import Home from '../views/home/index.vue'
 
 const router = createRouter({
   history: createWebHistory(),//import.meta.env.VITE_BASE_API
@@ -14,13 +14,13 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: () => import('@/views/login/login.vue'),
-      meta:{ requiresAuth:false }
+      meta:{title:'',requiresAuth:false }
     },
     {
       path: '/personal',
       name: 'personal',
       component: () => import('@/views/personal/index.vue'),
-      meta:{ requiresAuth:true ,redirect:'login'}
+      meta:{title:'', requiresAuth:true ,redirect:'login'}
     }
   ]
 })
