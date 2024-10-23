@@ -11,23 +11,23 @@ const i18n = createI18n({
   messages
 })
 
-interface T {
-  (key: I18nType.I18nKey): string
-  (key: I18nType.I18nKey, plural: number, options?: TranslateOptions<I18nType.LangType>): string
-  (key: I18nType.I18nKey, defaultMsg: string, options?: TranslateOptions<I18nType.I18nKey>): string
-  (key: I18nType.I18nKey, list: unknown[], options?: TranslateOptions<I18nType.I18nKey>): string
-  (key: I18nType.I18nKey, list: unknown[], plural: number): string
-  (key: I18nType.I18nKey, list: unknown[], defaultMsg: string): string
-  (
-    key: I18nType.I18nKey,
-    named: Record<string, unknown>,
-    options?: TranslateOptions<I18nType.LangType>
-  ): string
-  (key: I18nType.I18nKey, named: Record<string, unknown>, plural: number): string
-  (key: I18nType.I18nKey, named: Record<string, unknown>, defaultMsg: string): string
-}
+// interface T {
+//   (key: I18nType.I18nKey): string
+//   (key: I18nType.I18nKey, plural: number, options?: TranslateOptions<I18nType.LangType>): string
+//   (key: I18nType.I18nKey, defaultMsg: string, options?: TranslateOptions<I18nType.I18nKey>): string
+//   (key: I18nType.I18nKey, list: unknown[], options?: TranslateOptions<I18nType.I18nKey>): string
+//   (key: I18nType.I18nKey, list: unknown[], plural: number): string
+//   (key: I18nType.I18nKey, list: unknown[], defaultMsg: string): string
+//   (
+//     key: I18nType.I18nKey,
+//     named: Record<string, unknown>,
+//     options?: TranslateOptions<I18nType.LangType>
+//   ): string
+//   (key: I18nType.I18nKey, named: Record<string, unknown>, plural: number): string
+//   (key: I18nType.I18nKey, named: Record<string, unknown>, defaultMsg: string): string
+// }
 
-export const $t = i18n.global.t as T
+export const $t = i18n.global.t as any
 export const $locale = i18n.global.locale
 
 function getDefaultLanguage(): I18nType.LangType {
@@ -47,7 +47,6 @@ function getDefaultLanguage(): I18nType.LangType {
 
 export function setLocale(locale: I18nType.LangType) {
   i18n.global.locale.value = locale
-  console.log('123', locale, i18n.global)
   localStorage.setItem('lang', locale)
 }
 

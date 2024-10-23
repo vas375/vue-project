@@ -1,9 +1,17 @@
 {
-  "lang":{
-    "zh":"中文",
-    "en":"英语"
+  "lang": {
+    "zh": "中文",
+    "en": "英语"
   },
-  "tabbar":{
-    "home":"首页"
+  "tabbar": {
+    "home": "首页",
+    "active": "活动",
+    "personal": "个人",
+    "customer": "客服",
+    "promote": "推广"
+  },
+  "router": {
+    "login": "登录",
+    "register": "注册"
   }
 }

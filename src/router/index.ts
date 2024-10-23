@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '@/store/auth'
 import Home from '../views/home/index.vue'
-
+import i18n from '@/locales'
 const router = createRouter({
   history: createWebHistory(), //import.meta.env.VITE_BASE_API
   routes: [
@@ -14,19 +14,29 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: () => import('@/views/login/login.vue'),
-      meta: { title: '用户登录', requiresAuth: false }
+      meta: { title: 'router.login', requiresAuth: false }
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('@/views/login/register.vue'),
+      meta: { title: 'router.register', requiresAuth: false }
     },
     {
       path: '/personal',
       name: 'personal',
       component: () => import('@/views/personal/index.vue'),
-      meta: { title: '个人主页', requiresAuth: true, redirect: 'login' }
+      meta: { title: '', requiresAuth: true, redirect: 'login' }
     }
   ]
 })
 
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore()
+  const titleKey = to.meta.title
+  if (titleKey) {
+    document.title = i18n.global.t(titleKey)
+  }
   if (to.meta.requiresAuth && !authStore.isAuthenticated) {
     if (to.meta.redirect) {
       next({ name: 'login' })

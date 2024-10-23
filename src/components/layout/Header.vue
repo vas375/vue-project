@@ -5,10 +5,11 @@
     </template>
     <template #right>
       <div v-show="!auth.isAuthenticated">
-        <nut-button @click="handleToLoginPage" class="login">login</nut-button>
+        <nut-button @click="handleToLoginPage" class="login">{{ $t('router.login') }}</nut-button>
         &nbsp;
-        <nut-button type="primary" class="register">register</nut-button>
+        <nut-button type="primary" class="register">{{ $t('router.register') }}</nut-button>
       </div>
+      <div v-show="auth.isAuthenticated">wallet</div>
       &nbsp; &nbsp;
       <img :src="International" class="language" @click="openLanguageShow()" />
     </template>

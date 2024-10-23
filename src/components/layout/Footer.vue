@@ -29,22 +29,22 @@ const list = reactive([
     path: 'root'
   },
   {
-    name: '活动',
+    name: computed(() => $t('tabbar.active')),
     img: computed(() => (currentIndex.value === 1 ? ActiveH : ActiveD)),
     path: 'active'
   },
   {
-    name: '个人',
+    name: computed(() => $t('tabbar.personal')),
     img: Personal,
     path: 'personal'
   },
   {
-    name: '客服',
+    name: computed(() => $t('tabbar.customer')),
     img: computed(() => (currentIndex.value === 3 ? CustomerH : CustomerD)),
     path: 'curtomer'
   },
   {
-    name: '推广',
+    name: computed(() => $t('tabbar.promote')),
     img: computed(() => (currentIndex.value === 4 ? PromoteH : PromoteD)),
     path: 'promote'
   }

@@ -1,9 +1,17 @@
 {
-  "lang":{
-    "zh":"Chinese",
-    "en":"English"
+  "lang": {
+    "zh": "Chinese",
+    "en": "English"
   },
-  "tabbar":{
-    "home":"Home"
+  "tabbar": {
+    "home": "Home",
+    "active": "Active",
+    "personal": "Personal",
+    "customer": "Customer",
+    "promote": "Promote"
+  },
+  "router": {
+    "login": "Login",
+    "register": "Register"
   }
 }

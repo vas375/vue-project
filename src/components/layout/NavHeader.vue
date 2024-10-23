@@ -1,14 +1,15 @@
 <template>
-  <nut-navbar :title="route.meta?.title">
+  <nut-navbar :title="title">
     <template #left>
       <IconFont name="rect-left" color="#333" size="18" @click="onClick"></IconFont>
     </template>
   </nut-navbar>
 </template>
 <script lang="ts" setup>
-import { useRouter, useRoute } from 'vue-router'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 const router = useRouter()
-const route = useRoute()
+const title = ref<any>(document.title)
 const onClick = () => {
   router.go(-1)
 }
