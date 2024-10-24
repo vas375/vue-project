@@ -4,6 +4,7 @@
       <img :src="LOGO" alt="" style="height: 35px" />
     </template>
     <template #right>
+      <span style="color: red">{{ config.lastWallet ? config.lastWallet : 0 }}</span>
       <div v-show="!auth.isAuthenticated">
         <nut-button @click="handleToLoginPage" class="login">{{ $t('router.login') }}</nut-button>
         &nbsp;
@@ -36,11 +37,14 @@
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/store/auth'
+import { useConfigStore } from '@/store/config'
 import LOGO from '@/assets/images/global/head-logo.png'
 import International from '@/assets/images/global/international.png'
 import Close from '@/assets/images/global/action-close.png'
 import { setLocale, $t } from '@/locales'
+
 const auth = useAuthStore()
+const config = useConfigStore()
 const router = useRouter()
 const show = ref(false)
 const menuItems = [
@@ -74,6 +78,11 @@ const close = () => {
 const choseLang = (action: any) => {
   setLocale(action.key)
 }
+
+onMounted(() => {
+  console.log(config)
+  config.initLongpoll()
+})
 </script>
 <style lang="scss" scoped>
 :deep(.nut-navbar) {

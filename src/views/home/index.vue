@@ -48,7 +48,7 @@
 
         <!-- 游戏列表 -->
 
-        <!-- <nut-button @click="send" primary>send message</nut-button> -->
+        <nut-button @click="send" primary disabled>send message</nut-button>
       </div>
     </template>
     <template #foot>
@@ -91,7 +91,7 @@ const initContenct = () => {
     port: 80,
     modes: 'longpolling'
   })
-  _connect('private-example')
+  _connect('private-ccc')
   pushstream.value.onmessage = manageEvent
 }
 const _connect = (channel: any) => {
@@ -107,9 +107,9 @@ const _connect = (channel: any) => {
 const manageEvent = (msg: any) => {
   console.log(`eventMessage`, msg)
 }
-// const send = () => {
-//   pushstream.value.sendMessage(JSON.stringify({ nick: '甲1', text: 'connect to the word' }))
-// }
+const send = () => {
+  pushstream.value.sendMessage(JSON.stringify({ nick: '甲1', text: 'connect to the word' }))
+}
 
 const openDetail = () => {}
 onMounted(() => {
