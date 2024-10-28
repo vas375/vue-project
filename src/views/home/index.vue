@@ -6,7 +6,30 @@
     <template #content>
       <div class="containor">
         <!-- 奖池信息 -->
-        <div class="head-tab"></div>
+
+        <nut-tabs v-model="currentTabIndex">
+          <template #titles>
+            <div v-for="item in tabs" :key="item.paneKey" class="custom-tab-item">
+              <div
+                class="custom-title"
+                :class="{
+                  active: currentTabIndex === item.paneKey
+                }"
+              >
+                {{ item.name }}
+              </div>
+            </div>
+          </template>
+          <nut-tab-pane
+            v-for="item in list"
+            :key="item.paneKey"
+            :pane-key="item.paneKey"
+            v-show="false"
+          >
+            {{ item.title }}
+          </nut-tab-pane>
+        </nut-tabs>
+
         <div class="card">
           <div class="card-left">
             <div class="card-left-top">
@@ -47,8 +70,6 @@
         </div>
 
         <!-- 游戏列表 -->
-
-        <nut-button @click="send" primary disabled>send message</nut-button>
       </div>
     </template>
     <template #foot>
@@ -57,58 +78,73 @@
   </Layout>
 </template>
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, reactive, ref } from 'vue'
 import Header from '@/components/layout/Header.vue'
 import Layout from '@/components/layout/Layout.vue'
 import Foot from '@/components/layout/Footer.vue'
 import USDT from '@/assets/images/global/usdt.png'
 import TRX from '@/assets/images/global/trx.png'
+import HomeWhite from '@/assets/images/menu/root_home_white.png'
+import HomeInactive from '@/assets/images/menu/root_home_inactive.png'
+import HashWhite from '@/assets/images/menu/root_hash_game_white.png'
+import HashInactive from '@/assets/images/menu/root_hash_game_inactive.png'
+import SportsWhite from '@/assets/images/menu/root_sports_white.png'
+import SportsInactive from '@/assets/images/menu/root_sports_inactive.png'
+import SlotsWhite from '@/assets/images/menu/root_slots_white.png'
+import SlotsInactive from '@/assets/images/menu/root_slots_inactive.png'
+import BoardWhite from '@/assets/images/menu/root_game_white.png'
+import BoardInactive from '@/assets/images/menu/root_table_game_inactive.png'
+import LiveWhite from '@/assets/images/menu/root_live_white.png'
+import LiveInactive from '@/assets/images/menu/root_live_inactive.png'
+
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import { PushStream } from '@/longpoll/pushstream'
 import { getBannerList, getPricePool } from '@/service/index'
 import { useConfigStore } from '@/store/config'
+import { $t } from '@/locales'
 
-const config = useConfigStore()
+//const config = useConfigStore()
 const modules = [Navigation, Pagination, Scrollbar, A11y, Autoplay]
 const list = ref<any>([])
 
+const currentTabIndex = ref<any>(0) //tab 选项下标
+const tabs = reactive<any>([
+  {
+    name: computed(() => $t('home.name')),
+    image: computed(() => (currentTabIndex.value == 0 ? HomeWhite : HomeInactive))
+  },
+  {
+    name: computed(() => $t('home.hash')),
+    image: computed(() => (currentTabIndex.value == 1 ? HashWhite : HashInactive))
+  },
+  {
+    name: computed(() => $t('home.hashSport')),
+    image: computed(() => (currentTabIndex.value == 2 ? SportsWhite : SportsInactive))
+  },
+  {
+    name: computed(() => $t('home.electronic')),
+    image: computed(() => (currentTabIndex.value == 3 ? SlotsWhite : SlotsInactive))
+  },
+  {
+    name: computed(() => $t('home.board')),
+    image: computed(() => (currentTabIndex.value == 4 ? BoardWhite : BoardInactive))
+  },
+  {
+    name: computed(() => $t('home.live')),
+    image: computed(() => (currentTabIndex.value == 5 ? LiveWhite : LiveInactive))
+  }
+])
 //初始化轮播图
 const initBanner = async () => {
   const res: any = await getBannerList()
   list.value = res.data.map((item: any) => item.image)
 }
 
-//奖池详情接口
-const pushstream = ref<any>(null)
-
-const initContenct = () => {
-  pushstream.value = new PushStream({
-    host: '15.168.138.19',
-    port: 80,
-    modes: 'longpolling'
-  })
-  _connect('private-ccc')
-  pushstream.value.onmessage = manageEvent
-}
-const _connect = (channel: any) => {
-  console.log(channel)
-  pushstream.value.removeAllChannels()
-  try {
-    pushstream.value.addChannel(channel)
-    pushstream.value.connect()
-  } catch (e) {
-    console.log(e)
-  }
-}
-const manageEvent = (msg: any) => {
-  console.log(`eventMessage`, msg)
-}
-const send = () => {
-  pushstream.value.sendMessage(JSON.stringify({ nick: '甲1', text: 'connect to the word' }))
+const handleClick = (index: number) => {
+  currentTabIndex.value = index
 }
 
 const openDetail = () => {}
@@ -125,7 +161,24 @@ onMounted(() => {
   .head-tab {
     width: 100%;
     height: 44px;
-    background-color: var();
+    background-color: #f6f6f6;
+    overflow-x: auto;
+    .sroll-container {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      padding: 10px 15px;
+      height: 44px;
+      .tab-item {
+        display: flex;
+        padding: 10px 15px;
+        color: red;
+        img {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
   }
   .card {
     margin: 0 auto;

@@ -108,13 +108,14 @@ export const useConfigStore = defineStore({
     initLongpoll() {
       // console.log('new PushStream')
       const pushstream = new PushStream({
-        host: '15.168.138.19',
-        port: 80,
+        useSSL: true,
+        host: 'admin.uat.77hash.xyz',
+        //port: 9999,
         modes: 'longpolling'
       })
       pushstream.removeAllChannels()
       try {
-        pushstream.addChannel('private-ccc')
+        pushstream.addChannel('private-1035')
         pushstream.connect()
       } catch (e) {
         console.log(e)

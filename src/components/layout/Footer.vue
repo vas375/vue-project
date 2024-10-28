@@ -24,27 +24,27 @@ const route = useRoute()
 const currentIndex = ref<number>(0)
 const list = reactive([
   {
-    name: computed(() => $t('tabbar.home')),
+    name: computed(() => $t('tabbar.tabbar1')),
     img: computed(() => (currentIndex.value === 0 ? HomeH : HomeD)),
     path: 'root'
   },
   {
-    name: computed(() => $t('tabbar.active')),
+    name: computed(() => $t('tabbar.tabbar2')),
     img: computed(() => (currentIndex.value === 1 ? ActiveH : ActiveD)),
     path: 'active'
   },
   {
-    name: computed(() => $t('tabbar.personal')),
+    name: computed(() => $t('tabbar.tabbar5')),
     img: Personal,
     path: 'personal'
   },
   {
-    name: computed(() => $t('tabbar.customer')),
+    name: computed(() => $t('tabbar.tabbar3')),
     img: computed(() => (currentIndex.value === 3 ? CustomerH : CustomerD)),
     path: 'curtomer'
   },
   {
-    name: computed(() => $t('tabbar.promote')),
+    name: computed(() => $t('tabbar.tabbar4')),
     img: computed(() => (currentIndex.value === 4 ? PromoteH : PromoteD)),
     path: 'promote'
   }
